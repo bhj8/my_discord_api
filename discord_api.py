@@ -27,7 +27,11 @@ async def on_message(message: discord.Message):
         await message.channel.send('Hello!')
         await message.channel.send('\/imagine prompt:girl')
         await message.channel.send('/imagine prompt:girl')
-
+    
+    if message.attachments:
+        for attachment in message.attachments:
+            if attachment.filename.lower().endswith(('.png', '.jpeg', '.jpg', '.gif')):
+                print(attachment.url)
 
 client.run(TOKEN)#d反正这个token试一下就马上要改了，提交就提交吧
 
