@@ -19,12 +19,13 @@ async def on_ready():
     print(f'We have logged in as {client.user}')
 
 @client.event
-async def on_message(message):
+async def on_message(message: discord.Message):
     if message.author == client.user:
         return
 
     if message.content.startswith('$hello'):
         await message.channel.send('Hello!')
+        await message.channel.send('/imagine prompt:girl')
 
 client.run(TOKEN)#d反正这个token试一下就马上要改了，提交就提交吧
 
