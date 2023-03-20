@@ -24,7 +24,7 @@ async def on_message(message: discord.Message):
         return
 
     if message.content.startswith('$hello'):        
-        await message.channel.send('channel',message.channel.id)
+        await message.channel.send('channel' + message.channel.id,)
     
     if message.attachments:
         for attachment in message.attachments:
