@@ -23,10 +23,8 @@ async def on_message(message: discord.Message):
     if message.author == client.user:
         return
 
-    if message.content.startswith('$hello'):
-        await message.channel.send('Hello!')
-        await message.channel.send('\/imagine prompt:girl')
-        await message.channel.send('/imagine prompt:girl')
+    if message.content.startswith('$hello'):        
+        await message.channel.send('channel',message.channel.id)
     
     if message.attachments:
         for attachment in message.attachments:
