@@ -1,7 +1,14 @@
+
 # This example requires the 'message_content' intent.
 
-import discord
+import os
 
+import discord
+#读取当前工作目录下的env文件，获取token
+from dotenv import load_dotenv
+
+load_dotenv()
+TOKEN = os.getenv('MY_DISCORD_TOJEN')
 intents = discord.Intents.default()
 intents.message_content = True
 
@@ -19,6 +26,6 @@ async def on_message(message):
     if message.content.startswith('$hello'):
         await message.channel.send('Hello!')
 
-client.run('MTA4Njk1MjIyOTQ4OTA5MDU4MA.GUB-yS.WmXGAICun5GHonkx9sPHn_UXkBZ3NP85vHmtDQ')
+client.run(TOKEN)#d反正这个token试一下就马上要改了，提交就提交吧
 
 
